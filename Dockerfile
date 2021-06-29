@@ -2,7 +2,6 @@ from amazonlinux
 LABEL Demka first pipeline
 RUN yum -y update
 RUN yum -y install httpd
-RUN yum -y install php
 RUN yum -y install bash
 RUN yum -y install python
 RUN echo 'Hello' > /var/www/html/index.html
