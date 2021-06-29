@@ -1,6 +1,12 @@
-FROM python:3.7.2-alpine3.8
-LABEL  first image for pipeline
-RUN apk apdate && apk update
-COPY . ./date.py
-ARG
-CMD [ "python", "./sample.py" ]
+from amazonlinux
+LABEL Demka first pipeline
+RUN yum -y update
+RUN yum -y install httpd
+RUN yum -y install php
+RUN yum -y install bash
+RUN yum -y install python
+RUN echo 'Hello' > /var/www/html/index.html
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+COPY ./date.py  home/
+RUN python home/date.py
+EXPOSE 80
