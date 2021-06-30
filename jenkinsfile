@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+               sh '''
+               echo "Wow!"
+               cd ~/git/Project-CI-CD-
+                docker build -t date_server .
+                docker tag date_server:latest demka1/date_server:latest
+                docker push demka1/date_server:latest
+               '''
+               }
+        }
+    }
+        stage('Create_aws_instances') {
+            sh '''
+            cd ~/git/Terraform
+            terraform create_aws_instances.tf
+            '''
+            
+        }
+    
+}
+
