@@ -1,5 +1,5 @@
 from amazonlinux
-LABEL Demka first pipeline v0.4
+LABEL Demka first pipeline v0.5
 RUN yum -y update
 RUN yum -y install httpd
 RUN yum -y install bash
