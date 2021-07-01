@@ -13,7 +13,7 @@ pipeline {
                '''
                }
         }
-    }
+    
         stage('Create_aws_instances') {
             steps {
             sh '''
@@ -25,4 +25,5 @@ pipeline {
     
 }
 
+}
 }
