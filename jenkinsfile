@@ -17,7 +17,7 @@ pipeline {
         stage('Create_aws_instances') {
             steps {
             sh '''
-            cd ~/git/Terraform
+            cd /home/ubuntu/git/Terraform
             terraform create_aws_instances.tf
             '''
             
