@@ -18,7 +18,7 @@ pipeline {
             steps {
             sh '''
             cd /home/ubuntu/git/Terraform
-            terraform create_aws_instances.tf
+            terraform apply -auto-approve
             '''
             
         }
