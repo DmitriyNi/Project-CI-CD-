@@ -8,8 +8,7 @@ pipeline {
                echo "Wow!"
                cd /home/ubuntu/git/Project-CI-CD-
                 docker build -t date_server .
-                docker tag date_server:latest demka1/date_server:latest
-                docker push demka1/date_server:latest
+		 docker push demka1/date_server
                '''
                }
         }
